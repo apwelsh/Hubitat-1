@@ -1667,7 +1667,8 @@ def getOverlay(){
     val.each{ str->
         splitStr = str.split('_');
         deviceId = splitStr[1];
-        attribute = splitStr[2];
+        attribute = str[(splitStr[0]?.size() + splitStr[1]?.size() + 2)-str.size()..-1]
+
     
         sensor = sensors.find{ it.id == deviceId } ;
    
